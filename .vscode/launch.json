@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "type": "chrome",
+            "type": "Opera",
             "request": "launch",
             "name": "Open index.html",
             "file": "c:\\Users\\Luiz\\Desktop\\projeto TCC (Teu Cu Ceco)\\TELAS\\login definitivo Sisae\\index.html"
