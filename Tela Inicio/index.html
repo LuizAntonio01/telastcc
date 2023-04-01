@@ -29,6 +29,109 @@ body {background-color: rgb(31, 32, 41
 .bi_bi-person-bounding-box { color: #ffeba7;}
 
 
+
+        /* table {
+            border-collapse: collapse;
+            width: 50%;
+            text-align: center;
+			margin:auto;
+			
+        }
+        th, td {
+            padding: 8px;
+           
+        }
+        th {
+            background-color: #ffffff;
+			border : 3px solid #ffffffe4 ;
+        }
+   
+        
+
+		
+
+ 		 td { 
+  
+			padding: 10px 0;
+  			border: 3px solid #ffffffe4;
+  			text-align: center;
+			color: #ffffffe4;
+		}
+
+		.button5 {
+  background-color: rgb(31, 32, 41) ;
+  color: white;
+  border: 2px solid #555555;
+}
+
+.button5:hover {
+  background-color: #555555;
+  color: white;
+} */
+
+.table-container {
+  background-color: #2b3034;
+  max-width: 600px;
+  margin: 100px auto;
+
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+  text-decoration-color: white;
+}
+
+th {
+  background-color: #eee;
+}
+
+tr:nth-child(even) {
+  background-color: #2b3034;
+}
+
+button {
+  padding: 6px 10px;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 5px;
+}
+ 
+button:hover {
+  background-color: #338836;
+}
+
+button:active {
+  background-color: #186a1b;
+  transform: translateY(1px);
+}
+
+.btn1 {
+padding: 6px 10px; 
+  background-color: #a41d1d;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.btn1:hover {
+  background-color: #8e3e3e;
+}
+
+.btn1:active {
+  background-color: #720808;
+  transform: translateY(1px);
+}
+
+		
 </style>
 
 </head>
@@ -88,5 +191,107 @@ body {background-color: rgb(31, 32, 41
 		  </div>
 		</div>
 	  </nav>
+
+	  <!-- <table id="customers">
+		<tr>
+		  <th>Aluno</th>
+		pra dxar em branco
+		  <th></th>
+		  <th></th>
+		pra dxar em branco
+		</tr>
+		<tr>
+		  <td>Aluno1</td>
+		  <td>Maria Anders</td>
+		  <td>Germany</td>
+		</tr>
+		<tr>
+		  <td>Aluno1</td>
+		  <td>Christina Berglund</td>
+		  <td>Sweden</td>
+		</tr>
+		<tr>
+		  <td>Aluno1</td>
+		  <td>Francisco Chang</td>
+		  <td>Mexico</td>
+		</tr>
+		<tr>
+		  <td>Aluno1</td>
+		  <td>Roland Mendel</td>
+		  <td>Austria</td>
+		</tr>
+		<tr>
+		  <td>Aluno1</td>
+		  <td>Helen Bennett</td>
+		  <td>UK</td>
+		</tr>
+		<tr>
+		  <td>Aluno1</td>
+		  <td>Philip Cramer</td>
+		  <td>Germany</td>
+		</tr>
+		<tr>
+		  <td>Aluno1</td>
+		  <td>Yoshi Tannamuri</td>
+		  <td>Canada</td>
+		</tr>
+		<tr>
+		  <td>Aluno1</td>
+		  <td><button class="button button5">Black</button></td>
+		  <td>Italy</td>
+		</tr>
+		<tr>
+		  <td>Aluno1</td>
+		  <td>Simon Crowther</td>
+		  <td>UK</td>
+		</tr>
+		<tr>
+		  <td>Aluno1</td>
+		  <td>Marie Bertrand</td>
+		  <td>France</td>
+		</tr>
+	  </table>
+	   -->
+
+
+	   <div class="table-container">
+		<table>
+		  <thead>
+			<tr>
+			  <th>Column 1</th>
+			  <th>Column 2</th>
+			  <th>Column 3</th>
+			  <th>Column 4</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+			  <td>Row 1, Column 1</td>
+			  <td>Row 1, Column 2</td>
+			  <td>Row 1, Column 3</td>
+			  <td>Row 1, Column 4</td>
+			  <td><button>Edit</button></td>
+			  <td><button class="btn1">Delete</button></td>
+			</tr>
+			<tr>
+			  <td>Row 2, Column 1</td>
+			  <td>Row 2, Column 2</td>
+			  <td>Row 2, Column 3</td>
+			  <td>Row 2, Column 4</td>
+			  <td><button>Edit</button></td>
+			  <td><button class="btn1">Delete</button></td>
+			</tr>
+			<tr>
+			  <td>Row 3, Column 1</td>
+			  <td>Row 3, Column 2</td>
+			  <td>Row 3, Column 3</td>
+			  <td>Row 3, Column 4</td>
+			  <td><button>Edit</button></td>
+			  <td><button class="btn1">Delete</button></td>
+			</tr>
+		  </tbody>
+		</table>
+	  </div>
+	  
 </body>
 </html>
