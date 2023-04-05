@@ -4,7 +4,7 @@
     position: relative;
 }
 .section {
-    padding-top: 7rem;
+    padding-top: 6rem;
     padding-bottom: 7rem;
 }
 * {
@@ -48,7 +48,7 @@ body {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-user agent stylesheet
+
 div {
     display: block;
 }
@@ -75,23 +75,35 @@ body {
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #ffeba7;
+    color: #272A33;
     background-color: #1f2029;
     -webkit-text-size-adjust: 100%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 i {
-    font-size: 20pt;   
+    font-size: 23pt;
+    color: #13141A;
+    margin-right: 20px;
+    transition: 0.1s;   
 }
+
+i:hover {
+    font-size: 24pt;
+    color: #b7bee1;   
+}
+
 
                      /* ------fim card QRcode------ */
 
                      /* ------inicio Navbar------ */
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, .logo {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
   font-family: "Montserrat", sans-serif;
   font-weight: bold;
-  color: #ffeba7; }
+  color: #13141A; 
+  border-bottom: 2px solid #272A33;
+  text-align: center; }
+  
 
 a {
   -webkit-transition: .3s all ease;
@@ -143,7 +155,10 @@ textarea {
 .site-nav {
     padding-top: 20px;
     padding-bottom: 20px;
+    border-bottom: 2px solid #272A33;
 }
+
+
 
 .site-nav h1,
 .site-nav .h1 {
@@ -177,10 +192,13 @@ textarea {
 }
 
 .site-nav .site-navigation .site-menu>li.cta-button a {
-    padding: 6px 20px;
-    background: #081158;
-    border: 2px solid #081158;
-    color: #FBB244;
+    margin-top: 30px;
+    margin-right: 20px;
+    padding: 7px 30px;
+    background: #040828;
+    border: 2px solid #040828;
+    color: #ffeba7;
+    font-weight: bolder;
     border-radius: 30px;
 }
 
