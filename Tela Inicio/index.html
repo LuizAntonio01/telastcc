@@ -13,66 +13,34 @@
 	<script src="js/bootstrap.min.js" ></script>
    
 	
-	  <!-- <script src="js/bootstrap.bundle.min.js"></script>  -->
+	  <!-- <script src="js/bootstrap.bundle.min.js"></script> -->
 	
 	<title>SDC</title>
 
 <style>
 
-body {background-color: rgb(31, 32, 41
-	);
+body {background-color: #1f2029;
 
         }
-
-.navbar-brand { text-decoration-color : #ffeba7;}
-
-.bi_bi-person-bounding-box { color: #ffeba7;}
-
-
-
-        /* table {
-            border-collapse: collapse;
-            width: 50%;
-            text-align: center;
-			margin:auto;
-			
-        }
-        th, td {
-            padding: 8px;
-           
-        }
-        th {
-            background-color: #ffffff;
-			border : 3px solid #ffffffe4 ;
-        }
-   
-        
-
-		
-
- 		 td { 
-  
-			padding: 10px 0;
-  			border: 3px solid #ffffffe4;
-  			text-align: center;
-			color: #ffffffe4;
-		}
-
-		.button5 {
-  background-color: rgb(31, 32, 41) ;
-  color: white;
-  border: 2px solid #555555;
+/* ----navbar---- */
+.dropdown-item {
+	color: white;
 }
 
-.button5:hover {
-  background-color: #555555;
-  color: white;
-} */
+.navbar-brand {
+	color: white;
+}
+
+.nav-link {
+	color: white;
+}
+
+/* ----navbar----  */
 
 .table-container {
-  background-color: #2b3034;
-  max-width: 600px;
-  margin: 100px auto;
+  background-color: #2b2e38;
+  max-width: 750px;
+  margin: 10px auto;
 
 }
 
@@ -83,20 +51,22 @@ table {
 
 th, td {
   text-align: left;
-  padding: 5px;
-  background-color: #2b3034;
+  padding: 10px;
+  background-color: #2b2e38;
   color: white;}
 
 th {
-  background-color: #2b3034;
+  background-color: #2b2e38;
  
 }
 
 tr:nth-child(even) {
-  background-color: #2b3034;
+  background-color: #2b2e38;
 }
 
+
 button {
+  border-radius: 9px;
   padding: 2px 5px;
   background-color: #4CAF50;
   border: none;
@@ -114,70 +84,118 @@ button:active {
   transform: translateY(1px);
 }
 
-.btn1 {
-	padding: 2px 5px;
-  background-color: #a41d1d;
-  border: none;
+/* fichario */
+
+.content {
+	
+	border-radius: 0px 0px 9px 9px;
+}
+ .tab1
+
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+
+
+.tab {
+	
+  width: 700px;
+  margin: 100px auto;
+}
+
+.tab input[type] {
+  display: none;
+}
+/*envolve todo o nosso conteúdo*/
+.tab label {
+  white-space: nowrap;
+  background-color: #2b2e3867;
+  border-top-right-radius: 9px;
+  border-top-left-radius: 9px;
   color: white;
+  display: block;
+  float: left;
+  padding: 4px 86px;
+  margin-right: 1px;
   cursor: pointer;
-  margin-right: 5px;
+  transition: background-color .3s;
 }
 
-.btn1:hover {
-  background-color: #8e3e3e;
+.tab label:hover,
+.tab input:checked + label {
+  background: #2b2e38;
+  color: #fff;
 }
 
-.btn1:active {
-  background-color: #720808;
-  transform: translateY(1px);
+.tabs {
+  color: white;	
+  clear: both;
+  perspective: 400px;
+  -webkit-perspective: 400px;
 }
 
-		
+.tabs .content {
+  background: #2b2e38;
+  width: 700px;
+  position: absolute;
+  border: 2px solid #2b2e38;
+  padding: 10px 30px 40px;
+  /* line-height: 1.4em;
+  opacity: 0;
+  /* transform: rotateX(-20deg);
+  transform-origin: top center;
+  transition: opacity .3s, transform 1s;
+  z-index: 0; */ 
+}
+
+#tab1:checked ~ .tabs .content:nth-of-type(1),
+#tab2:checked ~ .tabs .content:nth-of-type(2),
+#tab3:checked ~ .tabs .content:nth-of-type(3),
+#tab4:checked ~ .tabs .content:nth-of-type(4) {
+  transform: rotateX(0);
+  opacity: 1;
+  z-index: 1;
+}
+		/* fichario  */
 </style>
 
 </head>
 <body>
+	<nav class="navbar navbar-expand-lg " style="background-color: #2b2e38;">
 	
-	<nav class="navbar  navbar-expand-lg bg-body-tertiary" data-bs-theme="dark"  >
 		<div class="container-fluid" >
 
 
 			  
-			  <a class="navbar-brand"  href="#" >texto</a>
+			  <!-- <a class="navbar-brand"  href="#" >texto</a>
 		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
+			<span class="navbar-toggler-icon"></span> ----Lugar da Logo-->
 		  </button>
 		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 			  <li class="nav-item">
-				<a class="nav-link active" aria-current="page" href="#">Home</a>
+				<a class="nav-link" aria-current="page" href="#">Home</a>
 			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="#"></a>
-			  </li>
+			
 
-			  <li class="nav-item dropdown">
+			  <li class="nav-item dropdown" >
 				<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 				  Turmas
 				</a>
-				<ul class="dropdown-menu">
-				  		<li><a class="dropdown-item" href="#">1° A</a></li>
-				  		<li><a class="dropdown-item" href="#">1° B</a></li>
-				  		<li><a class="dropdown-item" href="#">1° H</a></li>
-				    <li><hr class="dropdown-divider"></li>
-				  		<li><a class="dropdown-item" href="#">2° A</a></li>
-				  		<li><a class="dropdown-item" href="#">2° B</a></li>
-				  		<li><a class="dropdown-item" href="#">2° H</a></li>
-				    <li><hr class="dropdown-divider"></li>
-				  		<li><a class="dropdown-item" href="#">3° A</a></li>
-						<li><a class="dropdown-item" href="#">3° B</a></li>
-				        <li><a class="dropdown-item" href="#">3° H</a></li>
+				<ul class="dropdown-menu" style="background-color: #2b2e38;">
+				  		<li><a class="dropdown-item"  href="#">A | Técnico Integrado em<BR>INFORMÁTICA PARA INTERNET<BR></a></li>
+				  	<li><hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item"  href="#">B | Técnico Integrado em<BR>INFORMÁTICA PARA INTERNET<BR></a></li>
 					<li><hr class="dropdown-divider"></li>
-				<li><a class="dropdown-item" href="#">Tecnologia em <br> REDE DE COMPUTADORES</a></li>
-				    <li><hr class="dropdown-divider"></li>
-				<li><a class="dropdown-item" href="#">Licenciatura em <br>MATEMÁTICA</a></li>
-				    <li><hr class="dropdown-divider"></li>
-			    <li><a class="dropdown-item" href="#">Tecnologia em <br>GESTÃO DE TURISMO</a></li>
+						<li><a class="dropdown-item"  href="#">H | Técnico Integrado em<BR>HOSPEDAGEM<BR></a></li>
+					<li><hr class="dropdown-divider"></li>
+				<li><a class="dropdown-item"  href="#">Tecnologia em <br> REDE DE COMPUTADORES</a></li>
+				    <li><hr class="dropdown-divider" ></li>
+				<li><a class="dropdown-item"  href="#">Licenciatura em <br>MATEMÁTICA</a></li>
+				    <li><hr class="dropdown-divider" ></li>
+			    <li><a class="dropdown-item"  href="#">Tecnologia em <br>GESTÃO DE TURISMO</a></li>
 				  
 				</ul>
 			  </li>
@@ -193,106 +211,126 @@ button:active {
 		</div>
 	  </nav>
 
-	  <!-- <table id="customers">
-		<tr>
-		  <th>Aluno</th>
-		pra dxar em branco
-		  <th></th>
-		  <th></th>
-		pra dxar em branco
-		</tr>
-		<tr>
-		  <td>Aluno1</td>
-		  <td>Maria Anders</td>
-		  <td>Germany</td>
-		</tr>
-		<tr>
-		  <td>Aluno1</td>
-		  <td>Christina Berglund</td>
-		  <td>Sweden</td>
-		</tr>
-		<tr>
-		  <td>Aluno1</td>
-		  <td>Francisco Chang</td>
-		  <td>Mexico</td>
-		</tr>
-		<tr>
-		  <td>Aluno1</td>
-		  <td>Roland Mendel</td>
-		  <td>Austria</td>
-		</tr>
-		<tr>
-		  <td>Aluno1</td>
-		  <td>Helen Bennett</td>
-		  <td>UK</td>
-		</tr>
-		<tr>
-		  <td>Aluno1</td>
-		  <td>Philip Cramer</td>
-		  <td>Germany</td>
-		</tr>
-		<tr>
-		  <td>Aluno1</td>
-		  <td>Yoshi Tannamuri</td>
-		  <td>Canada</td>
-		</tr>
-		<tr>
-		  <td>Aluno1</td>
-		  <td><button class="button button5">Black</button></td>
-		  <td>Italy</td>
-		</tr>
-		<tr>
-		  <td>Aluno1</td>
-		  <td>Simon Crowther</td>
-		  <td>UK</td>
-		</tr>
-		<tr>
-		  <td>Aluno1</td>
-		  <td>Marie Bertrand</td>
-		  <td>France</td>
-		</tr>
-	  </table>
-	   -->
+	  <div class="tab">
+		<div class="row">
+		<div class="col-4">	
+		<input type="radio" name="tabs" id="tab1" checked>
+		<label for="tab1">1° ano</label>
+		</div>
+		
+		<div class="col-4">	
+		<input type="radio" name="tabs" id="tab2">
+		<label for="tab2">2° ano</label>
+		</div>
 
+		<div class="col-4">	
+		<input type="radio" name="tabs" id="tab3">
+		<label for="tab3">3° ano</label>
+		</div>	
+		</div>
+		<div class="tabs">
+		  <div class="content">
+			<div class="table-container">
+        <table class="table1">
+          <thead>
+            <tr>
+              <th>aaaaaa</th>
+             
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Row 1, Column 1</td>
+              
+			
+			  <td><a href="URL"><button>botão</button></a></td>
+            </tr>
+            <tr>
+              <td>Row 2, Column 1</td>
+            
+             
+			  <td><a href="URL"><button>botão</button></a></td>
+            </tr>
+            <tr>
+              <td>Row 3, Column 1</td>
+             
+			
+			  <td><a href="URL"><button>botão</button></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-	   <div class="table-container">
-		<table>
-		  <thead>
-			<tr>
-			  <th>Alunos</th>
-			  <th></th>
-			  <th></th>
-			  <th></th>
-			</tr>
-		  </thead>
-		  <tbody>
-			<tr>
-			  <td>Row 1</td>
-			  <td></td>
-			  <td></td>
-			  <td></td>
-			  <td><button>Edit</button></td>
-			  <td><button class="btn1">Delete</button></td>
-			</tr>
-			<tr>
-				<td>Row 1</td>
-				<td></td>
-				<td></td>
-				<td></td>
-			  <td><button>Edit</button></td>
-			  <td><button class="btn1">Delete</button></td>
-			</tr>
-			<tr>
-				<td>Row 1</td>
-				<td></td>
-				<td></td>
-				<td></td>
-			  <td><button>Edit</button></td>
-			  <td><button class="btn1">Delete</button></td>
-			</tr>
-		  </tbody>
-		</table>
+		  </div>
+		  
+		  <div class="content">
+			<div class="table-container">
+				<table class="table2">
+					<thead>
+					  <tr>
+						<th>aaaa</th>
+					   
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td>Row 1, Column 1</td>
+						
+						
+						<td><a href="URL"><button>botão</button></a></td>
+					  </tr>
+					  <tr>
+						<td>Row 2, Column 1</td>
+					  
+						
+						<td><a href="URL"><button>botão</button></a></td>
+					  </tr>
+					  <tr>
+						<td>Row 3, Column 1</td>
+					   
+						
+						<td><a href="URL"><button>botão</button></a></td>
+					  </tr>
+					</tbody>
+				  </table>
+			  </div>
+		  </div>
+		  
+		  <div class="content">
+			<div class="table-container">
+				<table class="table3">
+					<thead>
+					  <tr>
+						<th>AAAAAAA</th>
+					   
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td>nome aluno 1</td>
+						
+						
+						<td><a href="URL"><button>liberar</button></a></td>
+					  </tr>
+					  <tr>
+						<td>nome aluno 2</td>
+					  
+						
+						<td><a href="URL"><button>liberar</button></a></td>
+					  </tr>
+					  <tr>
+						<td>nome aluno 3</td>
+					   
+						
+						<td><a href="URL"><button>liberar</button></a></td>
+					  </tr>
+					</tbody>
+				  </table>
+			  </div>
+		  </div>
+		  
+		</div>
 	  </div>
-	  
+
 </body>
 </html>
