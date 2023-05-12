@@ -22,18 +22,31 @@
 body {background-color: #1f2029;
 
         }
+
 /* ----navbar---- */
 .dropdown-item {
 	color: white;
 }
 
+
+
+/* ----inicio navbar---- */
+.dropdown-item {
+	color: white;
+}
+
+
 .navbar-brand {
 	color: white;
 }
 
+
 .nav-link {
 	color: white;
 }
+
+.bi_bi-person-bounding-box { color: #ffeba7;}
+
 
 /* ----navbar----  */
 
@@ -42,9 +55,24 @@ body {background-color: #1f2029;
   max-width: 750px;
   margin: 10px auto;
 
+.nav-link {
+	color: white;
+}
+
+/* ----final navbar----  */
+
+.table-container {
+  background-color: #2b2e38;
+  max-width: 750px;
+  margin: 10px auto;
+  
+
+
 }
 
 table {
+
+
   border-collapse: collapse;
   width: 100%;
 }
@@ -87,7 +115,7 @@ button:active {
 /* fichario */
 
 .content {
-	 
+
 	border-radius: 0px 0px 9px 9px;
 }
  .tab1
@@ -118,7 +146,11 @@ button:active {
   display: block;
   float: left;
   padding: 4px 86px;
+
   margin-right: 13px;
+
+  margin-right: 1px;
+
   cursor: pointer;
   transition: background-color .3s;
 }
@@ -138,21 +170,39 @@ button:active {
 
 .tabs .content {
   background: #2b2e38;
+
   width: 685px;
   position: absolute;
   border: 2px solid #2b2e38;
   padding: 10px 30px 40px;  
+
+  width: 700px;
+  position: absolute;
+  border: 2px solid #2b2e38;
+  padding: 10px 30px 40px;
+  /* line-height: 1.4em;
+  opacity: 0;
+  /* transform: rotateX(-20deg);
+  transform-origin: top center;
+  transition: opacity .3s, transform 1s;
+  z-index: 0; */ 
+
 }
 
 #tab1:checked ~ .tabs .content:nth-of-type(1),
 #tab2:checked ~ .tabs .content:nth-of-type(2),
 #tab3:checked ~ .tabs .content:nth-of-type(3),
 #tab4:checked ~ .tabs .content:nth-of-type(4) {
+
   transform: rotateX(0);
+
+  
+
   opacity: 1;
   z-index: 1;
 }
 		/* fichario  */
+
 
 /* ------inicio Navbar------ */
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
@@ -383,6 +433,7 @@ textarea {
     visibility: visible;
     opacity: 1;
 }
+
 </style>
 
 </head>
@@ -535,7 +586,135 @@ textarea {
 			  </table></p>
 		  </div>
 		</div>
+
 	  </div>
+
+
+	  </nav>
+
+
+
+	  <div class="tab">
+		<div class="row">
+		<div class="col-4">	
+		<input type="radio" name="tabs" id="tab1" checked>
+		<label for="tab1">1° ano</label>
+		</div>
+		
+		<div class="col-4">	
+		<input type="radio" name="tabs" id="tab2">
+		<label for="tab2">2° ano</label>
+		</div>
+
+		<div class="col-4">	
+		<input type="radio" name="tabs" id="tab3">
+		<label for="tab3">3° ano</label>
+		</div>	
+		</div>
+		<div class="tabs">
+		  <div class="content">
+			<div class="table-container">
+        <table class="table1">
+          <thead>
+            <tr>
+              <th>aaaaaa</th>
+             
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Row 1, Column 1</td>
+              
+			
+			  <td><a href="URL"><button>botão</button></a></td>
+            </tr>
+            <tr>
+              <td>Row 2, Column 1</td>
+            
+             
+			  <td><a href="URL"><button>botão</button></a></td>
+            </tr>
+            <tr>
+              <td>Row 3, Column 1</td>
+             
+			
+			  <td><a href="URL"><button>botão</button></a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+		  </div>
+		  
+		  <div class="content">
+			<div class="table-container">
+				<table class="table2">
+					<thead>
+					  <tr>
+						<th>olhou</th>
+					   
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td>Row 1, Column 1</td>
+						
+						
+						<td><a href="URL"><button>botão</button></a></td>
+					  </tr>
+					  <tr>
+						<td>Row 2, Column 1</td>
+					  
+						
+						<td><a href="URL"><button>botão</button></a></td>
+					  </tr>
+					  <tr>
+						<td>Row 3, Column 1</td>
+					   
+						
+						<td><a href="URL"><button>liberar</button></a></td>
+					  </tr>
+					</tbody>
+				  </table>
+			  </div>
+		  </div>
+		  
+		  <div class="content">
+			<div class="table-container">
+				<table class="table3">
+					<thead>
+					  <tr>
+						<th>oia</th>
+					   
+					  </tr>
+					</thead>
+					<tbody>
+					  <tr>
+						<td>nome aluno 1</td>
+						
+						
+						<td><a href="URL"><button>liberar</button></a></td>
+					  </tr>
+					  <tr>
+						<td>nome aluno 2</td>
+					  
+						
+						<td><a href="URL"><button>liberar</button></a></td>
+					  </tr>
+					  <tr>
+						<td>nome aluno 3</td>
+					   
+						
+						<td><a href="URL"><button>liberar</button></a></td>
+					  </tr>
+					</tbody>
+				  </table>
+			  </div>
+		  </div>
+		  
+		</div>
+	  </div>
+
 
 </body>
 </html>

@@ -25,11 +25,11 @@
 										<div class="section text-center">
 											<h4 class="mb-4 pb-3">Log In</h4>
 											<div class="form-group">
-												<input type="email" class="form-style" placeholder="Email">
+												<input type="email" class="form-style" placeholder="Email" id="emaillogin">
 												<i class="input-icon uil uil-at"></i>
 											</div>	
 											<div class="form-group mt-2">
-												<input type="password" class="form-style" placeholder="Senha">
+												<input type="password" class="form-style" placeholder="Senha" id="senhalogin">
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
 											<a href="/Tela Inicio/index.html" class="btn mt-4">Login</a>
@@ -44,19 +44,19 @@
 										<div class="section text-center">
 											<h4 class="mb-3 pb-3">Cadastro</h4>
 											<div class="form-group">
-												<input type="text" class="form-style" placeholder="Nome Completo">
+												<input type="text" class="form-style" placeholder="Nome Completo" id="Nomealuno">
 												<i class="input-icon uil uil-user"></i>
 											</div>	
 											<div class="form-group mt-2">
-												<input type="text" class="form-style" placeholder="Matricula">
+												<input type="text" class="form-style" placeholder="Matricula" id="matricula">
 												<i class="input-icon uil  uil-file-alt"></i>
 											</div>	
                       <div class="form-group mt-2">
-												<input type="email" class="form-style" placeholder="Email">
+												<input type="email" class="form-style" placeholder="Email" id="emailcadastro">
 												<i class="input-icon uil uil-at"></i>
 											</div>
 											<div class="form-group mt-2">
-												<input type="password" class="form-style" placeholder="Senha">
+												<input type="password" class="form-style" placeholder="Senha" id="senhaaluno">
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
 											<a href="index.html" class="btn mt-4">Registre-se</a>
@@ -70,5 +70,15 @@
 	      	</div>
 	    </div>
 	</div>
+
+	<script>
+		let emaillog = document.getElementById('emaillogin')
+		let senhalog = document.getElementById('senhalogin')
+
+		let Nomeal = document.getElementById('nomealuno')
+		let Mat = document.getElementById('matricula')
+		let emailcad = document.getElementById('emailcadastro')
+		let senhaAl = document.getElementById('senhaaluno')
+	</script>
 </body>
 </html>
