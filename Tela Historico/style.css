@@ -81,6 +81,11 @@ body {
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+caption.text-start{
+font-family: "Montserrat", sans-serif;
+  color: #13141A; 
+}
+
 
 
 
