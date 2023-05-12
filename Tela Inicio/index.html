@@ -13,31 +13,48 @@
 	<script src="js/bootstrap.min.js" ></script>
    
 	
-	  <!-- <script src="js/bootstrap.bundle.min.js"></script>  -->
+	  <!-- <script src="js/bootstrap.bundle.min.js"></script> -->
 	
 	<title>SDC</title>
 
 <style>
 
-body {background-color: rgb(31, 32, 41
-	);
+body {background-color: #1f2029;
 
         }
-<<<<<<< Updated upstream
-=======
+
+/* ----navbar---- */
+.dropdown-item {
+	color: white;
+}
+
+
+
 /* ----inicio navbar---- */
 .dropdown-item {
 	color: white;
 }
->>>>>>> Stashed changes
 
-.navbar-brand { text-decoration-color : #ffeba7;}
 
-<<<<<<< Updated upstream
+.navbar-brand {
+	color: white;
+}
+
+
+.nav-link {
+	color: white;
+}
+
 .bi_bi-person-bounding-box { color: #ffeba7;}
 
 
-=======
+/* ----navbar----  */
+
+.table-container {
+  background-color: #ffffff;
+  max-width: 750px;
+  margin: 10px auto;
+
 .nav-link {
 	color: white;
 }
@@ -50,9 +67,11 @@ body {background-color: rgb(31, 32, 41
   margin: 10px auto;
   
 
+
 }
 
 table {
+
 
   border-collapse: collapse;
   width: 100%;
@@ -96,7 +115,7 @@ button:active {
 /* fichario */
 
 .content {
-	
+
 	border-radius: 0px 0px 9px 9px;
 }
  .tab1
@@ -127,7 +146,11 @@ button:active {
   display: block;
   float: left;
   padding: 4px 86px;
+
+  margin-right: 13px;
+
   margin-right: 1px;
+
   cursor: pointer;
   transition: background-color .3s;
 }
@@ -147,6 +170,12 @@ button:active {
 
 .tabs .content {
   background: #2b2e38;
+
+  width: 685px;
+  position: absolute;
+  border: 2px solid #2b2e38;
+  padding: 10px 30px 40px;  
+
   width: 700px;
   position: absolute;
   border: 2px solid #2b2e38;
@@ -157,79 +186,413 @@ button:active {
   transform-origin: top center;
   transition: opacity .3s, transform 1s;
   z-index: 0; */ 
+
 }
 
 #tab1:checked ~ .tabs .content:nth-of-type(1),
 #tab2:checked ~ .tabs .content:nth-of-type(2),
 #tab3:checked ~ .tabs .content:nth-of-type(3),
 #tab4:checked ~ .tabs .content:nth-of-type(4) {
+
+  transform: rotateX(0);
+
   
+
   opacity: 1;
   z-index: 1;
 }
 		/* fichario  */
->>>>>>> Stashed changes
+
+
+/* ------inicio Navbar------ */
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  color: #13141A; 
+  border-bottom: 2px solid #272A33;
+  text-align: center; }
+  
+
+a {
+  -webkit-transition: .3s all ease;
+  -o-transition: .3s all ease;
+  transition: .3s all ease;
+  text-decoration: none; }
+
+.form-control {
+  border: 2px solid #e9ecef;
+  font-size: 16px;
+  height: 45px; }
+  .form-control:active, .form-control:focus {
+    border-color: #ffffff;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+
+textarea {
+  height: auto !important; }
+
+#overlayer {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 7100;
+  background: #fff;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0; }
+
+.loader {
+  z-index: 7700;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+
+.site-nav {
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    width: 100%;
+    
+}
+
+.site-nav {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #272A33;
+}
+
+
+
+.site-nav h1,
+.site-nav .h1 {
+    margin: 0;
+    padding: 0;
+    font-size: 24px;
+}
+
+.site-nav .site-navigation .site-menu {
+    margin-bottom: 0;
+}
+
+.site-nav .site-navigation .site-menu>li {
+    display: inline-block;
+}
+
+.site-nav .site-navigation .site-menu>li>a {
+    font-size: 14px;
+    padding: 10px 15px;
+    display: inline-block;
+    text-decoration: none !important;
+    color: #ffffff;
+}
+
+.site-nav .site-navigation .site-menu>li>a:hover {
+    color:#ffffff;
+}
+
+.site-nav .site-navigation .site-menu>li.cta-button {
+    margin-left: 20px;
+}
+
+.site-nav .site-navigation .site-menu>li.cta-button a {
+    margin-top: 30px;
+    margin-right: 20px;
+    padding: 7px 30px;
+    background: #272A33;
+    border: 2px solid #2b2e38;
+    color: #6c757d;
+    font-weight: bolder;
+    border-radius: 30px;
+}
+
+.site-nav .site-navigation .site-menu>li.cta-button a:hover {
+    background-color: transparent;
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    color: #000;
+}
+
+.site-nav .site-navigation .site-menu>li.active>a {
+    color: #081158;
+}
+
+.site-nav .site-navigation .site-menu .has-children {
+    position: relative;
+}
+
+.site-nav .site-navigation .site-menu .has-children>a {
+    position: relative;
+    padding-right: 20px;
+}
+
+.site-nav .site-navigation .site-menu .has-children>a:before {
+    position: absolute;
+    content: "\e313";
+    font-size: 14px;
+    top: 50%;
+    right: 0;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-family: 'icomoon';
+}
+
+.site-nav .site-navigation .site-menu .has-children .dropdown {
+    visibility: hidden;
+    opacity: 0;
+    top: 100%;
+    z-index: 999;
+    position: absolute;
+    text-align: left;
+    -webkit-box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px -2px rgba(0, 0, 0, 0.1);
+    padding: 20px 0;
+    margin-top: 20px;
+    margin-left: 0px;
+    background: #fff;
+    -webkit-transition: 0.2s 0s;
+    -o-transition: 0.2s 0s;
+    transition: 0.2s 0s;
+}
+
+.site-nav .site-navigation .site-menu .has-children .dropdown a {
+    font-size: 14px;
+    text-transform: none;
+    letter-spacing: normal;
+    -webkit-transition: 0s all;
+    -o-transition: 0s all;
+    transition: 0s all;
+    color: #000;
+}
+
+.site-nav .site-navigation .site-menu .has-children .dropdown .active a {
+    color: #081158 !important;
+}
+
+.site-nav .site-navigation .site-menu .has-children .dropdown>li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 180px;
+}
+
+.site-nav .site-navigation .site-menu .has-children .dropdown>li>a {
+    padding: 5px 20px;
+    display: block;
+}
+
+.site-nav .site-navigation .site-menu .has-children .dropdown>li>a:hover {
+    color: #081158;
+}
+
+.site-nav .site-navigation .site-menu .has-children .dropdown>li.has-children>a:before {
+    content: "\e315";
+    right: 20px;
+}
+
+.site-nav .site-navigation .site-menu .has-children .dropdown>li.has-children>.dropdown,
+.site-nav .site-navigation .site-menu .has-children .dropdown>li.has-children>ul {
+    left: 100%;
+    top: 0;
+}
+
+.site-nav .site-navigation .site-menu .has-children .dropdown>li.has-children>.dropdown li a:hover,
+.site-nav .site-navigation .site-menu .has-children .dropdown>li.has-children>ul li a:hover {
+    color: #081158;
+}
+
+.site-nav .site-navigation .site-menu .has-children .dropdown>li.has-children:hover>a,
+.site-nav .site-navigation .site-menu .has-children .dropdown>li.has-children:active>a,
+.site-nav .site-navigation .site-menu .has-children .dropdown>li.has-children:focus>a {
+    color: #081158;
+}
+
+.site-nav .site-navigation .site-menu .has-children:hover>a,
+.site-nav .site-navigation .site-menu .has-children:focus>a,
+.site-nav .site-navigation .site-menu .has-children:active>a {
+    color: #000;
+}
+
+.site-nav .site-navigation .site-menu .has-children:hover,
+.site-nav .site-navigation .site-menu .has-children:focus,
+.site-nav .site-navigation .site-menu .has-children:active {
+    cursor: pointer;
+}
+
+.site-nav .site-navigation .site-menu .has-children:hover>.dropdown,
+.site-nav .site-navigation .site-menu .has-children:focus>.dropdown,
+.site-nav .site-navigation .site-menu .has-children:active>.dropdown {
+    -webkit-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    transition-delay: 0s;
+    margin-top: 0px;
+    visibility: visible;
+    opacity: 1;
+}
+
 </style>
 
 </head>
 <body>
 	
-	<nav class="navbar  navbar-expand-lg bg-body-tertiary" data-bs-theme="dark"  >
-		<div class="container-fluid" >
 
+		<nav class="site-nav mt-3">
+			<div class="container">
+			 <div class="site-navigation">
+			  <a href="index.html" class="logo m-0 mt-0 float-start" ><img src="logo.png" alt="Imagem logo" width="80px" class="img-fluid"></a>
+			<ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu float-end">
+			 <li class="has-children">
 
-			  
-			  <a class="navbar-brand"  href="#" >texto</a>
-		  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-			<span class="navbar-toggler-icon"></span>
-		  </button>
-		  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-			  <li class="nav-item">
-				<a class="nav-link active" aria-current="page" href="#">Home</a>
-			  </li>
-			  <li class="nav-item">
-				<a class="nav-link" href="#"></a>
-			  </li>
-
-			  <li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+			<li class="nav-item dropdown" >
+				<a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style=" width: 110px; font-size: 19px;">
 				  Turmas
 				</a>
-				<ul class="dropdown-menu">
-				  		<li><a class="dropdown-item" href="#">1° A</a></li>
-				  		<li><a class="dropdown-item" href="#">1° B</a></li>
-				  		<li><a class="dropdown-item" href="#">1° H</a></li>
-				    <li><hr class="dropdown-divider"></li>
-				  		<li><a class="dropdown-item" href="#">2° A</a></li>
-				  		<li><a class="dropdown-item" href="#">2° B</a></li>
-				  		<li><a class="dropdown-item" href="#">2° H</a></li>
-				    <li><hr class="dropdown-divider"></li>
-				  		<li><a class="dropdown-item" href="#">3° A</a></li>
-						<li><a class="dropdown-item" href="#">3° B</a></li>
-				        <li><a class="dropdown-item" href="#">3° H</a></li>
+				<ul class="dropdown-menu" style="background-color: #2b2e38;">
+				  		<li><a class="dropdown-item"  href="#">A | Técnico Integrado em<BR>INFORMÁTICA PARA INTERNET<BR></a></li>
+				  	<li><hr class="dropdown-divider"></li>
+						<li><a class="dropdown-item"  href="#">B | Técnico Integrado em<BR>INFORMÁTICA PARA INTERNET<BR></a></li>
 					<li><hr class="dropdown-divider"></li>
-				<li><a class="dropdown-item" href="#">Tecnologia em <br> REDE DE COMPUTADORES</a></li>
-				    <li><hr class="dropdown-divider"></li>
-				<li><a class="dropdown-item" href="#">Licenciatura em <br>MATEMÁTICA</a></li>
-				    <li><hr class="dropdown-divider"></li>
-			    <li><a class="dropdown-item" href="#">Tecnologia em <br>GESTÃO DE TURISMO</a></li>
+						<li><a class="dropdown-item"  href="#">H | Técnico Integrado em<BR>HOSPEDAGEM<BR></a></li>
+					<li><hr class="dropdown-divider"></li>
+				<li><a class="dropdown-item"  href="#">Tecnologia em <br> REDE DE COMPUTADORES</a></li>
+				    <li><hr class="dropdown-divider" ></li>
+				<li><a class="dropdown-item"  href="#">Licenciatura em <br>MATEMÁTICA</a></li>
+				    <li><hr class="dropdown-divider" ></li>
+			    <li><a class="dropdown-item"  href="#">Tecnologia em <br>GESTÃO DE TURISMO</a></li>
 				  
 				</ul>
 			  </li>
-			  <li class="nav-item">
-				<a class="nav-link">Permissões</a>
-			  </li>
+			
+			<li class="cta-button"><a href="#">Histórico</a></li>
 			</ul>
-			<form class="d-flex" role="search">
-			  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-			  <button class="btn btn-outline-light" type="submit">Search</button>
-			</form>
+			<a href="#" class="burger ml-auto float-right site-menu-toggle js-menu-toggle d-inline-block d-lg-none" data-toggle="collapse" data-target="#main-navbar">
+			<span></span>
+			   </a>
+			  </div>
+			 </div>
+			</nav>
+
+	</br>
+	</br>
+	</br>
+	</br>
+	
+	  <div class="tab">
+		<input type="radio" name="tabs" id="tab1" checked>
+		<label for="tab1">1° Ano</label>
+   
+		<input type="radio" name="tabs" id="tab2">
+		<label for="tab2">2° Ano</label>
+   
+		<input type="radio" name="tabs" id="tab3">
+		<label for="tab3">3° Ano</label>
+     
+		<div class="tabs">
+
+		
+		  <div class="content">
+			
+			<p><table>
+				<thead>
+				  <tr>
+					<th>Número de Matrícula</th>
+					<th class="text-center">Nome do Aluno</th>
+					<th class="d-flex justify-content-end">Liberação de Acesso</th>
+				  </tr>
+				</thead>
+				<tbody>
+				  <tr>
+					<td>54321</td>
+					<td class="text-center">João Augusto</td>
+					<td class="d-flex justify-content-end"><button >Liberar</button></td>
+				  </tr>
+				  <tr>
+					<td>23987</td>
+					<td class="text-center">Roberto filho</td>
+					<td class="d-flex justify-content-end"><button >Liberar</button></td>
+				  </tr>
+				  <tr>
+					<td>34598</td>
+					<td class="text-center">Paula Maria</td>
+					<td class="d-flex justify-content-end"><button >Liberar</button></td>
+				  </tr>
+				</tbody>
+			  </table>
+			  </p>
+		  </div>
+		   
+		  <div class="content">
+			
+			<p><table>
+				<thead>
+				  <tr>
+					<th>Número de Matrícula</th>
+					<th class="text-center">Nome do Aluno</th>
+					<th class="d-flex justify-content-end">Liberação de Acesso</th>
+				  </tr>
+				</thead>
+				<tbody>
+				  <tr>
+					<td>12345</td>
+					<td class="text-center">João da Silva</td>
+					<td class="d-flex justify-content-end"><button >Liberar</button></td>
+				  </tr>
+				  <tr>
+					<td>23456</td>
+					<td class="text-center">Maria Souza</td>
+					<td class="d-flex justify-content-end"><button >Liberar</button></td>
+				  </tr>
+				  <tr>
+					<td>34567</td>
+					<td class="text-center">Pedro Rocha</td>
+					<td class="d-flex justify-content-end"><button >Liberar</button></td>
+				  </tr>
+				</tbody>
+			  </table></p>
+		  </div>
+		   
+		  <div class="content" >
+		  
+			
+			<p><table>
+				<thead>
+				  <tr>
+					<th>Número de Matrícula</th>
+					<th class="text-center">Nome do Aluno</th>
+					<th class="d-flex justify-content-end">Liberação de Acesso</th>
+				  </tr>
+				</thead>
+				<tbody>
+				  <tr>
+					<td>23050</td>
+					<td class="text-center">Luiz Antonio</td>
+					<td class="d-flex justify-content-end"><button >Liberar</button></td>
+				  </tr>
+				  <tr>
+					<td>02060</td>
+					<td class="text-center">Luiz Fernando</td>
+					<td class="d-flex justify-content-end"><button >Liberar</button></td>
+				  </tr>
+				  <tr>
+					<td>29060</td>
+					<td class="text-center">Raíssa Mateus</td>
+					<td class="d-flex justify-content-end"><button >Liberar</button></td>
+				  </tr>
+				</tbody>
+			  </table></p>
 		  </div>
 		</div>
+
+	  </div>
+
+
 	  </nav>
-<<<<<<< Updated upstream
-=======
+
+
 
 	  <div class="tab">
 		<div class="row">
@@ -352,6 +715,6 @@ button:active {
 		</div>
 	  </div>
 
->>>>>>> Stashed changes
+
 </body>
 </html>
