@@ -2,7 +2,7 @@
 require_once '../sessao.php';
 
 if (! $logado) {
-    die("Você não tem permissão paa acessar essa página.");
+    die("Você não tem permissão para acessar essa página.");
 }
 ?>
 <!DOCTYPE html>
@@ -25,7 +25,7 @@ if (! $logado) {
             <div class="site-navigation">
                      <a href="index.html" class="logo m-0 mt-0 float-start"><img src="Logoifcbranco.png" alt="Image" width="80px" class="img-fluid"></a>
                 <ul class="js-clone-nav d-lg-inline-block text-start site-menu float-end">       
-                    <li class="cta-button"><a href="#">Historico</a></li>
+                    <li class="cta-button"><a href="../Tela Historico/Telahistorico.php">Historico</a></li>
                 </ul>
                 
             </div>
@@ -56,16 +56,15 @@ if (! $logado) {
                             </div>
 
                                 <div class="d-flex justify-content-center">
-                                    <div id="imprimir" class="col-sm-4 col-md-4 col-lg-4 ">
-                                        <form method="post">
-                                            <input type="submit" name="gerar_qr" value="Gerar QR Code">
+                                    <div class=" col-sm-4 col-md-4 col-lg-4">
+                                        <form method="post" class="d-table-cell">
+                                            
 
                                             <?php
 
                                                 if (isset($_POST['gerar_qr'])) {
                                                     include('../conexao.php');
-                                                    include('../sessao.php');
-                                                    // Include the qrlib file
+
                                                     include 'phpqrcode/qrlib.php';
 
                                                     if ($_SESSION['tipo_user'] == "Discente") {
@@ -80,13 +79,16 @@ if (! $logado) {
                                                             while ($row = $result->fetch_assoc()) {
                                                                 // Aqui você pode acessar os valores das colunas por meio do nome da coluna
                                                                 $MatResult = $row["Matricula"];
+                                                                $_SESSION["Matricula"] = $Matresult;
                                                                 
                                                                 // Nome único para cada arquivo QR code
-                                                                $qrFileName = 'qrcode_' . $MatResult . '.png';
+                                                                $qrFileName = 'qrcode_' . $MatResult . '.webp';
+                                                                $caminhoImagem = './qrcode_' . $MatResult . '.webp';
+                                                                $_SESSION['caminho_imagem'] = $caminhoImagem;
 
                                                                 // QR Code generation using png()
-                                                                QRcode::png($MatResult, $qrFileName);
-                                                                echo '<img src="' . $qrFileName . '" alt="QR Code">';
+                                                                QRcode::png($MatResult, $qrFileName,  QR_ECLEVEL_Q , 8, 1);
+                                                                echo '<div class="m-1 img-fluid"><img id="imprimir" src="' . $qrFileName . '" alt="QR Code"></div>';
                                                             }
                                                         } else {
                                                             echo "Nenhum resultado encontrado.";
@@ -103,20 +105,38 @@ if (! $logado) {
                                                             while ($row = $result->fetch_assoc()) {
                                                                 // Aqui você pode acessar os valores das colunas por meio do nome da coluna
                                                                 $RMIResult = $row["RMI"];
+                                                                $_SESSION["RMI"] = $RMIResult;
 
                                                                 // Nome único para cada arquivo QR code
-                                                                $qrFileName = 'qrcode_' . $RMIResult . '.png';
+                                                                $qrFileName = 'qrcode_' . $RMIResult . '.webp';
+                                                                $caminhoImagem = 'qrcode_' . $RMIResult . '.webp';
+                                                                $_SESSION['caminho_imagem'] = $caminhoImagem;
 
                                                                 // QR Code generation using png()
-                                                                QRcode::png($RMIResult, $qrFileName);
-                                                                echo '<img src="' . $qrFileName . '" alt="QR Code">';
+                                                                QRcode::png($RMIResult, $qrFileName, QR_ECLEVEL_Q , 8, 1);
+                                                                echo '<img  class="m-1 img-fluid" id="imprimir" src="' . $qrFileName . '" alt="QR Code">';
                                                             }
                                                         } else {
                                                             echo "Nenhum resultado encontrado.";
                                                         }
                                                     }
                                                 }
+
+                                                
+                                                function encerrarSessao() {
+                                                    if (isset($_SESSION['caminho_imagem'])) {
+                                                        $caminhoImagem = $_SESSION['caminho_imagem'];
+                                                        
+                                                        if (file_exists($caminhoImagem)) {
+                                                            imageDestroy($caminhoImagem);
+                                                        }
+                                                    }
+                                                }
+                                                
+                                                register_shutdown_function('encerrarSessao');
                                             ?>
+                                            </br>
+                                            <input class="" type="submit" name="gerar_qr" value="Gerar QR Code">
                                         </form>
                                     </div>
                                 </div>

@@ -1,6 +1,7 @@
 <?php
 require_once './sessao.php';
 include("./conexao.php");
+session_regenerate_id(true);
 
 $p_NomeUser = $_POST['NomeUser'] ?? NULL;
 $p_senha = $_POST['senha'] ?? NULL;

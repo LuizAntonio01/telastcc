@@ -28,16 +28,16 @@
 										<Form class="section text-center" action="../logar.php" method="post">
 											<h4 class="mb-4 pb-3">Login</h4>
 											<div class="form-group">
-												<input type="text" class="form-style" placeholder="Nome Completo" name="NomeUser" id="NomeUser">
+												<input type="text" class="form-style" required title="Por favor, preencha este campo" placeholder="Nome Completo" name="NomeUser" id="NomeUser">
 												<i class="input-icon uil uil-at"></i>
 											</div>	
 											<div class="form-group mt-2">
-												<input type="password" class="form-style" placeholder="Senha" id="senha">
+												<input type="password" class="form-style" required title="Por favor, preencha este campo" placeholder="Senha" id="senha">
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
 											<button type="submit" class="btn mt-4" >Login</button>
 										
-					  <p class="mb-0 mt-4"><a href="" class="link link-underline-opacity-0 p-3">SISAE</a><a href="" class="link link-underline-opacity-0 p-3">Usuario</a></p>
+					  
 					  
 				      					</Form>
 			      					</div>
@@ -48,18 +48,18 @@
 											<h4 class="mb-3 pb-3">Cadastro</h4>
 
 											<div class="form-group">
-												<input type="text" class="form-style" placeholder="Nome Completo" name="NomeUser">
+												<input type="text" class="form-style" required title="Por favor, preencha este campo" placeholder="Nome Completo" name="NomeUser">
 												<i class="input-icon uil uil-user"></i>
 											</div>
 
 
 											<div class="form-group mt-2">
-												<input type="password" class="form-style" placeholder="Senha" name="senha">
+												<input type="password" class="form-style" required title="Por favor, preencha este campo" placeholder="Senha" name="senha">
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
 
 											<div class="form-group mt-2">
-												<input type="text" class="form-style" placeholder="Matricula" name="matricula">
+												<input type="text" class="form-style" required title="Por favor, preencha este campo" placeholder="Matricula" name="matricula">
 												<i class="input-icon uil  uil-file-alt"></i>
 											</div>	
 
