@@ -1,80 +1,58 @@
 <?php
-require_once './sessao.php';
+include("./sessao.php");
 include("./conexao.php");
 session_regenerate_id(true);
 
-$p_NomeUser = $_POST['NomeUser'] ?? NULL;
-$p_senha = $_POST['senha'] ?? NULL;
 
 
-$p_tipo_usuario = "SELECT Tipo_usuario FROM usuario WHERE Nome_usuario = '$p_NomeUser'"; //---------------
+$p_NomeUser = $_POST['NomeUser'] ?? '';
+$p_senha = $_POST['Senha'] ?? '';
 
-// Executa a consulta e armazena o resultado em uma variável 
-$result = $conn->query($p_tipo_usuario);
+// Verifique se os valores foram fornecidos
+if ($p_NomeUser !== NULL && $p_senha !== NULL) {
+    // Evite injeção SQL usando declarações preparadas
+    $stmt = $conn->prepare("SELECT Tipo_usuario, Nome_usuario, Senha FROM usuario WHERE Nome_usuario = ? AND Senha = ?");
+    $stmt->bind_param("ss", $p_NomeUser, $p_senha);
+    $stmt->execute();
 
-// Verifica se a consulta retornou algum resultado
-if ($result->num_rows > 0) {
-    // Obtem o resultado como uma matriz associativa
-    $row = $result->fetch_assoc();
+    // Armazene os resultados
+    $stmt->bind_result($tipoUsuario, $nomeUsuario, $senha);
+
+        // Verifique se os resultados foram encontrados
+        if ($stmt->fetch()) {
+            
+            if ($tipoUsuario == "Discente" || $tipoUsuario == "Docente") {
+                $_SESSION['usuario'] = $nomeUsuario;
+                $_SESSION['senha'] = $senha;
+                $_SESSION['tipo_user'] = $tipoUsuario;
+                $_SESSION['session_id'] = session_id();
+                header('Location: http://localhost/telastcc/Tela_Aluno/Telaaluno.php');
+            } elseif ($tipoUsuario == "Sisae") {
+                $_SESSION['usuario'] = $nomeUsuario;
+                $_SESSION['senha'] = $senha;
+                $_SESSION['tipo_user'] = $tipoUsuario;
+                $_SESSION['session_id'] = session_id();
+                header('Location: http://localhost/telastcc/Tela_inicio/index.php');
+            }
+            
+            } else {
+                echo "
+                <script>
+                alert ('Senha ou Usuario incorreto!!');
+                window.location='./login_definitivo_aluno/index.php';
+                </script>
+                ";
+                session_unset();
+                session_destroy();
+            
+            
+    } 
     
-    // Acesse o valor da coluna "Tipo_usuario"
-    $Result_tipo_usuario = $row["Tipo_usuario"];}         // <---- resultado query 
-
-//----------------------------------------------------------------------------------------------------------
-
-$NomeUserdb = "SELECT Nome_usuario FROM usuario WHERE Nome_usuario = '$p_NomeUser'";//----------------
-
-// Executa a consulta e armazena o resultado em uma variável
-$result = $conn->query($NomeUserdb);
-
-// Verifica se a consulta retornou algum resultado
-if ($result->num_rows > 0) {
-    // Obtem o resultado como uma matriz associativa
-    $row = $result->fetch_assoc();
-    
-    // Acesse o valor da coluna "Nome_usuario"
-    $Result_NomeUser_db = $row["Nome_usuario"];}  // <---- resultado query
-//------------------------------------------------------------------------------------------------------------------                                                                            /*Logar doscente */
-
-$senha_db= "SELECT Senha FROM usuario WHERE Senha = '$p_senha' && Nome_usuario = '$p_NomeUser'";//------------------------------------------
-
-// Executa a consulta e armazena o resultado em uma variável
-$result = $conn->query($senha_db);
-
-// Verifica se a consulta retornou algum resultado
-if ($result->num_rows > 0) {
-    // Obtem o resultado como uma matriz associativa
-    $row = $result->fetch_assoc();
-    
-    // Acesse o valor da coluna "Senha"
-    $Result_senha_db = $row["Senha"];
-}     else {                                    // <---- resultado query 
-    echo "<p>Erro na consulta: </p>" . $conn->error;
 }
-//--------------------------------------------------------------------------------------------------------
 
-
-
-if ($p_NomeUser == $Result_NomeUser_db && $p_senha == $Result_senha_db) {
-    if($Result_tipo_usuario == "Discente" || $Result_tipo_usuario == "Docente"){
-        $_SESSION['usuario'] = $Result_NomeUser_db;
-        $_SESSION['senha'] = $Result_senha_db;
-        $_SESSION['tipo_user'] = $Result_tipo_usuario;
-        $_SESSION['session_id'] = session_id();
-        header('Location: http://localhost/telastcc/Tela_Aluno/Telaaluno.php');
-    } elseif ($Result_tipo_usuario == "Sisae") {
-        $_SESSION['usuario'] = $Result_NomeUser_db;
-        $_SESSION['senha'] = $Result_senha_db;
-        $_SESSION['tipo_user'] = $Result_tipo_usuario;
-        $_SESSION['session_id'] = session_id();
-        header('Location: http://localhost/telastcc/Tela_inicio/index.php');         
-    }
-} else {
-    session_unset();
-    session_destroy();
-    header('Location: http://localhost/telastcc/login_definitivo_aluno/index.php');
-    echo "<p>senha ou usuario incorreto</p>";
-   
-}
+// Feche a declaração    
+$stmt->close();
+// Não se esqueça de fechar a conexão com o banco de dados depois
+$conn->close();
 
 ?>

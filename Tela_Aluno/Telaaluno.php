@@ -79,7 +79,7 @@ if (! $logado) {
                                                             while ($row = $result->fetch_assoc()) {
                                                                 // Aqui você pode acessar os valores das colunas por meio do nome da coluna
                                                                 $MatResult = $row["Matricula"];
-                                                                $_SESSION["Matricula"] = $Matresult;
+                                                                $_SESSION["Matricula"] = $MatResult;
                                                                 
                                                                 // Nome único para cada arquivo QR code
                                                                 $qrFileName = 'qrcode_' . $MatResult . '.webp';
@@ -112,7 +112,7 @@ if (! $logado) {
                                                                 $caminhoImagem = 'qrcode_' . $RMIResult . '.webp';
                                                                 $_SESSION['caminho_imagem'] = $caminhoImagem;
 
-                                                                // QR Code generation using png()
+                                                                // QR Code generation usando png()
                                                                 QRcode::png($RMIResult, $qrFileName, QR_ECLEVEL_Q , 8, 1);
                                                                 echo '<img  class="m-1 img-fluid" id="imprimir" src="' . $qrFileName . '" alt="QR Code">';
                                                             }

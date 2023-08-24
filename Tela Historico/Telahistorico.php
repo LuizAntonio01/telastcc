@@ -2,9 +2,6 @@
 include('../conexao.php');
 require_once '../sessao.php';
 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-
 if (! $logado) {
     die("Você não tem permissão para acessar essa página.");
 }

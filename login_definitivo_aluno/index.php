@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="pt-BR">
 <head>
@@ -13,6 +14,14 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+	<script>
+        // Use a função alert() para exibir a mensagem do PHP como um alerta
+        var mensagemPHP = "<?php echo $mensagem; ?>";
+        if (mensagemPHP !== "") {
+            alert(mensagemPHP);
+        }
+    </script>
+	
 	<div class="section">
 		<div class="container">
 			<div class="row full-height justify-content-center">
@@ -26,13 +35,14 @@
 								<div class="card-front">
 									<div class="center-wrap">
 										<Form class="section text-center" action="../logar.php" method="post">
+
 											<h4 class="mb-4 pb-3">Login</h4>
 											<div class="form-group">
 												<input type="text" class="form-style" required title="Por favor, preencha este campo" placeholder="Nome Completo" name="NomeUser" id="NomeUser">
 												<i class="input-icon uil uil-at"></i>
 											</div>	
 											<div class="form-group mt-2">
-												<input type="password" class="form-style" required title="Por favor, preencha este campo" placeholder="Senha" id="senha">
+												<input type="password" class="form-style" required title="Por favor, preencha este campo" name="Senha" placeholder="Senha" id="senha">
 												<i class="input-icon uil uil-lock-alt"></i>
 											</div>
 											<button type="submit" class="btn mt-4" >Login</button>
