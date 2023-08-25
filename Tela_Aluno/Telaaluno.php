@@ -3,6 +3,7 @@ require_once '../sessao.php';
 
 if (! $logado) {
     die("Você não tem permissão para acessar essa página.");
+    header('Location: http://localhost/telastcc/login_definitivo_aluno/index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -26,6 +27,7 @@ if (! $logado) {
                      <a href="index.html" class="logo m-0 mt-0 float-start"><img src="Logoifcbranco.png" alt="Image" width="80px" class="img-fluid"></a>
                 <ul class="js-clone-nav d-lg-inline-block text-start site-menu float-end">       
                     <li class="cta-button"><a href="../Tela Historico/Telahistorico.php">Historico</a></li>
+                    <li ><form  method="post" action="../logout.php" ><input class="cta-button" type="submit" value="Logout"></form></li>
                 </ul>
                 
             </div>
@@ -83,7 +85,7 @@ if (! $logado) {
                                                                 
                                                                 // Nome único para cada arquivo QR code
                                                                 $qrFileName = 'qrcode_' . $MatResult . '.webp';
-                                                                $caminhoImagem = './qrcode_' . $MatResult . '.webp';
+                                                                $caminhoImagem = './Tela_Aluno/qrcode_' . $MatResult . '.webp';
                                                                 $_SESSION['caminho_imagem'] = $caminhoImagem;
 
                                                                 // QR Code generation using png()
@@ -109,7 +111,7 @@ if (! $logado) {
 
                                                                 // Nome único para cada arquivo QR code
                                                                 $qrFileName = 'qrcode_' . $RMIResult . '.webp';
-                                                                $caminhoImagem = 'qrcode_' . $RMIResult . '.webp';
+                                                                $caminhoImagem = './Tela_Aluno/qrcode_' . $RMIResult . '.webp';
                                                                 $_SESSION['caminho_imagem'] = $caminhoImagem;
 
                                                                 // QR Code generation usando png()
@@ -123,17 +125,9 @@ if (! $logado) {
                                                 }
 
                                                 
-                                                function encerrarSessao() {
-                                                    if (isset($_SESSION['caminho_imagem'])) {
-                                                        $caminhoImagem = $_SESSION['caminho_imagem'];
-                                                        
-                                                        if (file_exists($caminhoImagem)) {
-                                                            imageDestroy($caminhoImagem);
-                                                        }
-                                                    }
-                                                }
+                            
                                                 
-                                                register_shutdown_function('encerrarSessao');
+                                        
                                             ?>
                                             </br>
                                             <input class="" type="submit" name="gerar_qr" value="Gerar QR Code">

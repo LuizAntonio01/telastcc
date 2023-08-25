@@ -12,13 +12,18 @@ if (! $logado) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Document</title>
+
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
-    <link href="../login_definitivo_aluno/css/bootstrap.min.css" rel="stylesheet" >
+
+    <link href="../login_definitivo_aluno\css\bootstrap.min.css" rel="stylesheet" >
+
     <link href="style.css" rel="stylesheet">
-    <script src="../login_definitivo_aluno/js/popper.min.js" ></script>
-	<script src="../login_definitivo_aluno/js/bootstrap.min.js" ></script>
-    <script src="../login_definitivo_aluno/js/bootstrap.bundle.min.js"></script>  
+
+    <script src="../login_definitivo_aluno\js\bootstrap.bundle.min.js"></script> 
+	<script src="../login_definitivo_aluno\js\popper.min.js" ></script>
+     <script src="../login_definitivo_aluno\js\bootstrap.min.js" ></script>
 </head>
 <body>
     <nav class="site-nav ">
@@ -38,8 +43,6 @@ if (! $logado) {
     <br>
     <br>
     <br>
-    
-
 
 
     <div class="section section-1">
@@ -49,7 +52,7 @@ if (! $logado) {
                         <div class="feature box-shadow ">
                              <div class="d-flex flex-row-reverse me-5 mt-3 ">
 							 <div class="dropdown">
-								<button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+								<button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-toggle="dropdown" aria-expanded="false">
 									Turmas
 								</button>
 								<ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="dropdownMenuButton1">
