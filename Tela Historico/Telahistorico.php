@@ -47,26 +47,7 @@ if (! $logado) {
                 <div class="row">
                     <div class="col-sm-12 col-md-12 col-lg-12 aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
                         <div class="feature box-shadow ">
-                            <!-- <div class="d-flex flex-row-reverse me-5 mt-3 ">
-                                <div class="dropdown">
-                                    <button class="btn btn-dark dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Turmas
-                                    </button>
-                                    <ul class="dropdown-menu dropdown-menu-dark " aria-labelledby="dropdownMenuButton1">
-                                    <li><a class="dropdown-item " href="#">1°A</a></li>
-                                    <li><a class="dropdown-item " href="#">2°A</a></li>
-                                    <li><a class="dropdown-item " href="#">3°A</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item " href="#">1°B</a></li>
-                                    <li><a class="dropdown-item " href="#">2°B</a></li>
-                                    <li><a class="dropdown-item " href="#">3°B</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item " href="#">1°H</a></li>
-                                    <li><a class="dropdown-item " href="#">2°H</a></li>
-                                    <li><a class="dropdown-item " href="#">3°H</a></li>
-                                    </ul>
-                                </div>
-                            </div> -->
+                        
                         
                             
 
@@ -116,6 +97,7 @@ if (! $logado) {
                                                 FROM usuario
                                                 INNER JOIN trafego ON usuario.Cod_usuario = trafego.FKCODUSUARIO
                                                 WHERE usuario.RMI = " . $_SESSION["RMI"];
+
 
                                                 $result = $conn->query($sql);
                                                                                         

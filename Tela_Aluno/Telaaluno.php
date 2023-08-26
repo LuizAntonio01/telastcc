@@ -62,15 +62,11 @@ if (! $logado) {
                                         <form method="post" class="d-table-cell">
                                             
 
-                                            <?php
-
-                                                if (isset($_POST['gerar_qr'])) {
-                                                    include('../conexao.php');
-
-                                                    include 'phpqrcode/qrlib.php';
-
-                                                    if ($_SESSION['tipo_user'] == "Discente") {
-                                                        // Consulta SQL
+                                            <?php 
+                                            include('../conexao.php');
+                                            include 'phpqrcode/qrlib.php';
+                                            if ($_SESSION['tipo_user'] == "Discente") {
+                                                    // Consulta SQL
                                                         $sql = "SELECT Matricula FROM usuario WHERE Nome_usuario = '".$_SESSION['usuario']."'";
                                                         // Executa a consulta e armazena o resultado em uma variável
                                                         $result = $conn->query($sql);
@@ -82,21 +78,10 @@ if (! $logado) {
                                                                 // Aqui você pode acessar os valores das colunas por meio do nome da coluna
                                                                 $MatResult = $row["Matricula"];
                                                                 $_SESSION["Matricula"] = $MatResult;
-                                                                
-                                                                // Nome único para cada arquivo QR code
-                                                                $qrFileName = 'qrcode_' . $MatResult . '.webp';
-                                                                $caminhoImagem = './Tela_Aluno/qrcode_' . $MatResult . '.webp';
-                                                                $_SESSION['caminho_imagem'] = $caminhoImagem;
-
-                                                                // QR Code generation using png()
-                                                                QRcode::png($MatResult, $qrFileName,  QR_ECLEVEL_Q , 8, 1);
-                                                                echo '<div class="m-1 img-fluid"><img id="imprimir" src="' . $qrFileName . '" alt="QR Code"></div>';
-                                                            }
-                                                        } else {
-                                                            echo "Nenhum resultado encontrado.";
+                                                               }
                                                         }
                                                     } elseif ($_SESSION['tipo_user'] == "Docente") {
-                                                        // Consulta SQL
+
                                                         $sql = "SELECT RMI FROM usuario WHERE Nome_usuario = '".$_SESSION['usuario']."'";
                                                         // Executa a consulta e armazena o resultado em uma variável
                                                         $result = $conn->query($sql);
@@ -108,8 +93,29 @@ if (! $logado) {
                                                                 // Aqui você pode acessar os valores das colunas por meio do nome da coluna
                                                                 $RMIResult = $row["RMI"];
                                                                 $_SESSION["RMI"] = $RMIResult;
+                                                                }
+                                                            }
+                                                        }
 
+                                                if (isset($_POST['gerar_qr'])) {
+                                                    
+ 
+
+                                                    if ($_SESSION['tipo_user'] == "Discente") {
+                                                        
+                                                                
                                                                 // Nome único para cada arquivo QR code
+                                                                $qrFileName = 'qrcode_' . $MatResult . '.webp';
+                                                                $caminhoImagem = './Tela_Aluno/qrcode_' . $MatResult . '.webp';
+                                                                $_SESSION['caminho_imagem'] = $caminhoImagem;
+
+                                                                // QR Code generation using png()
+                                                                QRcode::png($MatResult, $qrFileName,  QR_ECLEVEL_Q , 8, 1);
+                                                                echo '<div class="m-1 img-fluid"><img id="imprimir" src="' . $qrFileName . '" alt="QR Code"></div>';
+                                                            
+                                                        } elseif($_SESSION['tipo_user'] == "Docente") {
+                                                            
+                                                            // Nome único para cada arquivo QR code
                                                                 $qrFileName = 'qrcode_' . $RMIResult . '.webp';
                                                                 $caminhoImagem = './Tela_Aluno/qrcode_' . $RMIResult . '.webp';
                                                                 $_SESSION['caminho_imagem'] = $caminhoImagem;
@@ -117,16 +123,13 @@ if (! $logado) {
                                                                 // QR Code generation usando png()
                                                                 QRcode::png($RMIResult, $qrFileName, QR_ECLEVEL_Q , 8, 1);
                                                                 echo '<img  class="m-1 img-fluid" id="imprimir" src="' . $qrFileName . '" alt="QR Code">';
-                                                            }
-                                                        } else {
+                                                        }else {
                                                             echo "Nenhum resultado encontrado.";
                                                         }
+        
+                                                         
                                                     }
-                                                }
-
-                                                
-                            
-                                                
+  
                                         
                                             ?>
                                             </br>

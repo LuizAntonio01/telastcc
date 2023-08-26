@@ -22,7 +22,6 @@ if ($p_NomeUser !== NULL && $p_senha !== NULL) {
         if ($stmt->fetch()) {
             
             if ($tipoUsuario == "Discente" || $tipoUsuario == "Docente") {
-                unlink('Tela_Aluno/qrcode_*');
                 $_SESSION['usuario'] = $nomeUsuario;
                 $_SESSION['senha'] = $senha;
                 $_SESSION['tipo_user'] = $tipoUsuario;
