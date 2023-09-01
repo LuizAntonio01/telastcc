@@ -27,7 +27,7 @@ if (! $logado) {
                      <a href="index.html" class="logo m-0 mt-0 float-start"><img src="Logoifcbranco.png" alt="Image" width="80px" class="img-fluid"></a>
                 <ul class="js-clone-nav d-lg-inline-block text-start site-menu float-end">       
                     <li class="cta-button"><a href="../Tela Historico/Telahistorico.php">Historico</a></li>
-                    <li ><form  method="post" action="../logout.php" ><input class="cta-button" type="submit" value="Logout"></form></li>
+                    <li ><form  method="post" action="../logout.php" ><input class="btn btn-outline-light my-4" type="submit" value="Logout"></form></li>
                 </ul>
                 
             </div>
@@ -133,7 +133,7 @@ if (! $logado) {
                                         
                                             ?>
                                             </br>
-                                            <input class="" type="submit" name="gerar_qr" value="Gerar QR Code">
+                                            <input class="btn btn-dark" type="submit" name="gerar_qr" value="Gerar QR Code">
                                         </form>
                                     </div>
                                 </div>
