@@ -26,13 +26,13 @@ if ($p_NomeUser !== NULL && $p_senha !== NULL) {
                 $_SESSION['senha'] = $senha;
                 $_SESSION['tipo_user'] = $tipoUsuario;
                 $_SESSION['session_id'] = session_id();
-                header('Location: http://localhost/telastcc/Tela_Aluno/Telaaluno.php');
+                header('Location: http://192.168.0.104:8080/telastcc/Tela_Aluno/Telaaluno.php');
             } elseif ($tipoUsuario == "Sisae") {
                 $_SESSION['usuario'] = $nomeUsuario;
                 $_SESSION['senha'] = $senha;
                 $_SESSION['tipo_user'] = $tipoUsuario;
                 $_SESSION['session_id'] = session_id();
-                header('Location: http://localhost/telastcc/Tela_inicio/index.php');
+                header('Location: http://192.168.0.104:8080/telastcc/Tela_inicio/index.php');
             }
             
             } else {

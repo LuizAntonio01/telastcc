@@ -3,7 +3,7 @@ require_once '../sessao.php';
 
 if (! $logado) {
     die("Você não tem permissão para acessar essa página.");
-    header('Location: http://localhost/telastcc/login_definitivo_aluno/index.php');
+    header('Location: http://192.168.0.104:8080/telastcc/login_definitivo_aluno/index.php');
 }
 ?>
 <!DOCTYPE html>
@@ -58,8 +58,8 @@ if (! $logado) {
                             </div>
 
                                 <div class="d-flex justify-content-center">
-                                    <div class=" col-sm-4 col-md-4 col-lg-4">
-                                        <form method="post" class="d-table-cell">
+                                    
+                                        <form method="post" class="justify-content-center">
                                             
 
                                             <?php 
@@ -111,7 +111,7 @@ if (! $logado) {
 
                                                                 // QR Code generation using png()
                                                                 QRcode::png($MatResult, $qrFileName,  QR_ECLEVEL_Q , 8, 1);
-                                                                echo '<div class="m-1 img-fluid"><img id="imprimir" src="' . $qrFileName . '" alt="QR Code"></div>';
+                                                                echo '<div class="mt-5 mb-3 img-fluid imprimir"><img id="imprimir" src="' . $qrFileName . '" alt="QR Code"></div>';
                                                             
                                                         } elseif($_SESSION['tipo_user'] == "Docente") {
                                                             
@@ -122,7 +122,7 @@ if (! $logado) {
 
                                                                 // QR Code generation usando png()
                                                                 QRcode::png($RMIResult, $qrFileName, QR_ECLEVEL_Q , 8, 1);
-                                                                echo '<img  class="m-1 img-fluid" id="imprimir" src="' . $qrFileName . '" alt="QR Code">';
+                                                                echo '<img  class="mt-5 mb-3 img-fluid imprimir" id="imprimir" src="' . $qrFileName . '" alt="QR Code">';
                                                         }else {
                                                             echo "Nenhum resultado encontrado.";
                                                         }
@@ -133,9 +133,10 @@ if (! $logado) {
                                         
                                             ?>
                                             </br>
-                                            <input class="btn btn-dark" type="submit" name="gerar_qr" value="Gerar QR Code">
+                                            <input class="btn mx-4 btn-dark" type="submit" name="gerar_qr" value="Gerar QR Code">
                                         </form>
-                                    </div>
+                                   
+                                    
                                 </div>
 
                                 <div class="d-flex flex-row-reverse">

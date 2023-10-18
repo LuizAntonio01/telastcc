@@ -2,15 +2,15 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <title>  User</title>
+  <title>  Gererencosdor de Trafego</title>
   <link rel="icon"  type="image/ico"  href="img/user120.png" /> <!--icon titulo-->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
-  <link href="http://localhost/telastcc/login_definitivo_aluno/css/bootstrap.min.css" rel="stylesheet">
-  <script src="http://localhost/telastcc/login_definitivo_aluno/js/popper.min.js" ></script>
-  <script src="http://localhost/telastcc/login_definitivo_aluno/js/bootstrap.min.js" ></script>
-  <script src="http://localhost/telastcc/login_definitivo_aluno/js/bootstrap.bundle.min.js"></script>  
+  <link href="http://192.168.0.104:8080/telastcc/login_definitivo_aluno/css/bootstrap.min.css" rel="stylesheet">
+  <script src="http://192.168.0.104:8080/telastcc/login_definitivo_aluno/js/popper.min.js" ></script>
+  <script src="http://192.168.0.104:8080/telastcc/login_definitivo_aluno/js/bootstrap.min.js" ></script>
+  <script src="http://192.168.0.104:8080/telastcc/login_definitivo_aluno/js/bootstrap.bundle.min.js"></script>  
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -77,12 +77,12 @@
 												<label>Tipo:</label>
 												
 												<div class="form-check form-check-inline ms-4">
-													<input class="form-check-input"  type="radio"  value="Discente" name="tipo_usuario">
-													<label class="form-check-label" for="discente">Discente</label>
+													<input class="form-check-input" id="discente" title="Aluno" type="radio"  value="Discente" name="tipo_usuario">
+													<label class="form-check-label" title="Aluno" for="discente">Discente</label>
 												</div>
 												<div class="form-check form-check-inline mx-3">
-													<input class="form-check-input" type="radio"  value="Docente" name="tipo_usuario">
-													<label class="form-check-label" for="docente">Docente</label>
+													<input class="form-check-input" id="docente" title="Professor" type="radio"  value="Docente" name="tipo_usuario">
+													<label class="form-check-label" title="Professor" for="docente">Docente</label>
 												</div>
 												
 											</div>

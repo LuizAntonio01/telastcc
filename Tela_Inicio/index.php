@@ -20,7 +20,7 @@ if (!$logado) {
 
     <link href=".\css\bootstrap.min.css" rel="stylesheet">
 
-    <link href="style.css" rel="stylesheet">
+    <link  rel="stylesheet" href="style.css">
 
     <script src=".\js\bootstrap.bundle.min.js"></script>
     <script src=".\js\popper.min.js"></script>
@@ -34,7 +34,8 @@ if (!$logado) {
                 <a class="logo m-0 mt-0 float-start"><img src="../Tela_Aluno\logoifcbranco.png" alt="Image" width="80px" class="img-fluid"></a>
                 <ul class="js-clone-nav d-lg-inline-block text-start site-menu float-end">
                     <li>
-                        <form method="post" action="../logout.php"><input class="btn btn-outline-light my-4 border-2" type="submit" value="Logout"></form>
+                        <li class="cta-button"><a href="Tela_Liberacao.php">Liberação</a></li>
+                        <li><form method="post" action="../logout.php"><input class="btn btn-outline-light my-4 border-2" type="submit" value="Logout"></form></li>
                     </li>
                 </ul>
 
@@ -55,26 +56,19 @@ if (!$logado) {
                 <div class="feature box-shadow ">
                     <div class=" me-5 mt-3 ">
 
-                        <div class="d-flex flex-row-reverse bd-highlight">
-                            
-
-                        </div>
-                        <form class="form-inline" method="post">
-                                <div class="col-10 form-group">
-                                <div class="input-group mb-3">
-                                    <input id="filtro" name="filtro" type="text" class="form-control" placeholder=" Filtrar por nome" aria-label="Recipient's username" aria-describedby="button-addon2">
-                                    <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="uil uil-search"></i></button>
-                                </div>
-                                    <!-- <label for="filtro" class=" text-light form-label">Filtrar por nome:</label>
-                                    <input type="text" id="filtro" name="filtro" class=" form-control">
-                                    <button type="submit" class="col-1 btn btn-outline-light"><i class="uil uil-search"></i></button> -->
-
+                       
+                        <form class="form-inline d-flex flex-row-reverse" method="get">
+                                <div class="col-3 form-group">
+                                    <div class="input-group mb-3">
+                                        <input id="filtro" name="filtro" type="text" class="form-control" placeholder=" Filtro Por Nome" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                        <button class="btn btn-outline-secondary" type="submit" id="button-addon2"><i class="uil uil-search"></i></button>
+                                    </div>
                                 </div>
 
                             </form>
-                        <div class="row mt-0 px-5 table-responsive">
+                        <div class="row mt-0 ps-5 table-responsive">
 
-                            <span class="col-4 text-start fs-2 fw-semibold border-bottom border-dark pb-0 mb-4">Historico aluno:</span>
+                            <span class="col-4 text-start text-black-50 fs-2 fw-semibold border-bottom border-dark pb-0 mb-4">Historico aluno:</span>
 
                             <table id="myTable" class="table table-hover table-dark caption-top">
 
@@ -89,14 +83,15 @@ if (!$logado) {
                                 <tbody class="text-center">
                                     <?php
 
-                                    $filtro = isset($_POST['filtro']) ? $_POST['filtro'] : NULL;
+                                    $filtro = isset($_GET['filtro']) ? ucfirst($_GET['filtro']) : NULL;
 
                                     if (!empty($filtro)) {
 
                                         $sql = "SELECT usuario.Nome_usuario, usuario.Matricula, trafego.TIPO_TRAFEGO, trafego.HORA, trafego.DIA
                                         FROM usuario
                                         INNER JOIN trafego ON usuario.Cod_usuario = trafego.FKCODUSUARIO
-                                        WHERE usuario.Tipo_usuario = 'Discente' AND (usuario.Nome_usuario = '$filtro' OR '$filtro' = '')";
+                                        WHERE usuario.Tipo_usuario = 'Discente' AND (usuario.Nome_usuario = '$filtro' OR '$filtro' = '')
+                                        ORDER BY trafego.DIA DESC;";
 
                                         $result = $conn->query($sql);
 
@@ -119,7 +114,8 @@ if (!$logado) {
                                         $sql = "SELECT usuario.Nome_usuario, usuario.Matricula, trafego.TIPO_TRAFEGO, trafego.HORA, trafego.DIA
 										FROM usuario
 										INNER JOIN trafego ON usuario.Cod_usuario = trafego.FKCODUSUARIO
-										WHERE usuario.Tipo_usuario = 'Discente'";
+										WHERE usuario.Tipo_usuario = 'Discente'
+                                        ORDER BY trafego.DIA DESC;";
 
                                         $result = $conn->query($sql);
 

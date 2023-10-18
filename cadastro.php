@@ -1,8 +1,11 @@
 <?php 
-if (isset($_POST['NomeUser'])) { $p_NomeUser =  $_POST['NomeUser'];};
+if (isset($_POST['NomeUser'])) { $p_NomeUser = ucfirst($_POST['NomeUser']);};
 if (isset($_POST['senha'])) {$p_Senha = $_POST['senha'];};
 if (isset($_POST['matricula'])) {$p_Matricula = $_POST['matricula'];};
 if (isset($_POST['tipo_usuario'])) {$p_tipo_usuario = $_POST['tipo_usuario'];};
+
+
+
 
 
 if($p_tipo_usuario == "Discente"){
@@ -16,9 +19,19 @@ if($p_tipo_usuario == "Discente"){
 include("conexao.php");
 
 if ($conn->query($sql) === TRUE) {
-    echo "<p>Dados inseridos com sucesso!</p>";
+    echo "
+                <script>
+                alert ('Dados Inseridos Com Sucesso!!');
+                window.location='./login_definitivo_aluno/index.php';
+                </script>
+                ";
 } else {
-    echo "<p>Erro ao inserir os dados:</p>" . $conn->error;
+    echo "
+                <script>
+                alert ('ERRO Na Inserção Dos Dados');
+                window.location='./login_definitivo_aluno/index.php';
+                </script>
+                " . $conn->error;
 }
 
 $conn->close();

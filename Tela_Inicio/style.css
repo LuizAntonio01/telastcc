@@ -91,9 +91,9 @@
                                      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
                                  }
 
-                                 caption.text-start {
+                                 span#titulotabela {
                                      font-family: "Montserrat", sans-serif;
-                                     color: #13141A;
+                                     color: #ffffff;
                                  }
 
 
@@ -349,7 +349,4 @@
                                      opacity: 1;
                                  }
 
-                                 #dropdown {
-                                     position: relative;
-                                     z-index: 1;
-                                 }
+                                 
