@@ -12,7 +12,9 @@ if (! $logado) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gerenciador De Acesso</title>
+    <link rel="icon"  type="image/ico"  href="../login_definitivo_aluno/img/Logo.jpeg" /> <!--icon titulo-->
+
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link href="../login_definitivo_aluno/css/bootstrap.min.css" rel="stylesheet" >
     <link href="style.css" rel="stylesheet">
@@ -70,9 +72,10 @@ if (! $logado) {
                                    
                                             if ($_SESSION['tipo_user'] == "Discente") {
                                                 $sql = "SELECT usuario.Nome_usuario, usuario.Matricula, trafego.TIPO_TRAFEGO, trafego.HORA, trafego.DIA
-                                                FROM usuario
-                                                INNER JOIN trafego ON usuario.Cod_usuario = trafego.FKCODUSUARIO
-                                                WHERE usuario.Matricula = " . $_SESSION["Matricula"];
+                                                        FROM usuario
+                                                        INNER JOIN trafego ON usuario.Cod_usuario = trafego.FKCODUSUARIO
+                                                        WHERE usuario.Matricula = " . $_SESSION["Matricula"] .
+                                                        " ORDER BY trafego.DIA DESC, trafego.HORA DESC";
 
                                                     $result = $conn->query($sql);
                                                                                             
@@ -96,7 +99,8 @@ if (! $logado) {
                                                 $sql = "SELECT usuario.Nome_usuario, usuario.RMI, trafego.TIPO_TRAFEGO, trafego.HORA, trafego.DIA
                                                 FROM usuario
                                                 INNER JOIN trafego ON usuario.Cod_usuario = trafego.FKCODUSUARIO
-                                                WHERE usuario.RMI = " . $_SESSION["RMI"];
+                                                WHERE usuario.RMI = " . $_SESSION["RMI"] .
+                                                " ORDER BY trafego.DIA DESC, trafego.HORA DESC";
 
 
                                                 $result = $conn->query($sql);

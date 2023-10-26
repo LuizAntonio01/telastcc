@@ -16,7 +16,8 @@ if (!$logado) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Document</title>
+    <title>Gerenciador De Acesso</title>
+    <link rel="icon"  type="image/ico"  href="../login_definitivo_aluno/img/Logo.jpeg" /> <!--icon titulo-->
 
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 
@@ -103,10 +104,10 @@ if (!$logado) {
                                                 echo "<tr class='align-middle'>";
                                                 echo "<td scope='col-2'>" . $row["Matricula"] . "</td>";
                                                 echo "<td scope='col-8'>" . $row["Nome_usuario"] . "</td>";
-                                                echo "<td scope='col-2'><form method='post' id='liberar-form' action='./Liberacao.php'> 
+                                                echo "<td scope='col-2'><form method='post'  action='./Liberacao.php'> 
                                                                             <input type='hidden' name='usuario_nome' value='" . $row["Nome_usuario"] . "'>
                                                                             <input type='hidden' name='Matricula' value='" . $row["Matricula"] . "'>
-                                                                            <button type='submit' class='btn btn-outline-success mt-auto' >Liberar</button>                                                                     
+                                                                            <button type='submit' class='btn btn-outline-success mt-2' >Liberar</button>                                                                     
                                                                         </form></td>";
                                                 echo "</tr>";
                                             }
@@ -129,10 +130,10 @@ if (!$logado) {
                                                 echo "<tr class='align-middle'>";
                                                 echo "<td scope='col-2'>" . $row["Matricula"] . "</td>";
                                                 echo "<td scope='col-8'>" . $row["Nome_usuario"] . "</td>";
-                                                echo "<td scope='col-2'><form method='post' id='liberar-form' action='./Liberacao.php'>         
+                                                echo "<td scope='col-2'><form method='post'  action='./Liberacao.php'>         
                                                                             <input type='hidden' name='usuario_nome' value='" . $row["Nome_usuario"] . "'>
                                                                             <input type='hidden' name='Matricula' value='" . $row["Matricula"] . "'>
-                                                                            <button type='submit' class='btn btn-outline-success mt-1' >Liberar</button> 
+                                                                            <button type='submit' class='btn btn-outline-success mt-3' >Liberar</button> 
                                                                         </form></td>";
 
                                                 echo "</tr>";
@@ -161,7 +162,7 @@ if (!$logado) {
 
             $.ajax({
                 type: "POST",
-                url: "Liberação.php",
+                url: "Liberacao.php",
                 data: $("#liberar-form").serialize(),
                 dataType: "json",
                 success: function(response) {
