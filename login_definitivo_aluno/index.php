@@ -2,15 +2,21 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <title>  Gererencosdor de Trafego</title>
-  <link rel="icon"  type="image/ico"  href="img/user120.png" /> <!--icon titulo-->
+  <title>Gerenciador De Acesso</title>
+  <link rel="icon"  type="image/ico"  href="img/Logo.jpeg" /> <!--icon titulo-->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.9/css/unicons.css">
-  <link href="http://192.168.0.104:8080/telastcc/login_definitivo_aluno/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="http://192.168.0.104:8080/telastcc/login_definitivo_aluno/css/bootstrap.min.css" rel="stylesheet">
   <script src="http://192.168.0.104:8080/telastcc/login_definitivo_aluno/js/popper.min.js" ></script>
   <script src="http://192.168.0.104:8080/telastcc/login_definitivo_aluno/js/bootstrap.min.js" ></script>
-  <script src="http://192.168.0.104:8080/telastcc/login_definitivo_aluno/js/bootstrap.bundle.min.js"></script>  
+  <script src="http://192.168.0.104:8080/telastcc/login_definitivo_aluno/js/bootstrap.bundle.min.js"></script>   -->
+
+  <link href="./css/bootstrap.min.css" rel="stylesheet">
+  <script src="./js/popper.min.js" ></script>
+  <script src="./js/bootstrap.min.js" ></script>
+  <script src="./js/bootstrap.bundle.min.js"></script>
+
 <link rel="stylesheet" href="style.css">
 </head>
 <body>

@@ -14,7 +14,8 @@ if (!$logado) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Document</title>
+    <title>Gerenciador de Acesso</title>
+    <link rel="icon"  type="image/ico"  href="../login_definitivo_aluno/img/Logo.jpeg" /> <!--icon titulo-->
 
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
 
@@ -91,7 +92,7 @@ if (!$logado) {
                                         FROM usuario
                                         INNER JOIN trafego ON usuario.Cod_usuario = trafego.FKCODUSUARIO
                                         WHERE usuario.Tipo_usuario = 'Discente' AND (usuario.Nome_usuario = '$filtro' OR '$filtro' = '')
-                                        ORDER BY trafego.DIA DESC;";
+                                        ORDER BY trafego.DIA DESC, trafego.HORA DESC;";
 
                                         $result = $conn->query($sql);
 
@@ -115,7 +116,7 @@ if (!$logado) {
 										FROM usuario
 										INNER JOIN trafego ON usuario.Cod_usuario = trafego.FKCODUSUARIO
 										WHERE usuario.Tipo_usuario = 'Discente'
-                                        ORDER BY trafego.DIA DESC;";
+                                        ORDER BY trafego.DIA DESC, trafego.HORA DESC;";
 
                                         $result = $conn->query($sql);
 

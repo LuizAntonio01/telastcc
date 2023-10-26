@@ -3,7 +3,8 @@ require_once '../sessao.php';
 
 if (! $logado) {
     die("Você não tem permissão para acessar essa página.");
-    header('Location: http://192.168.0.104:8080/telastcc/login_definitivo_aluno/index.php');
+    //header('Location: http://192.168.0.104:8080/telastcc/login_definitivo_aluno/index.php'); 
+    header('Location: http://192.168.25.134:8080/telastcc/login_definitivo_aluno/index.php'); 
 }
 ?>
 <!DOCTYPE html>
@@ -12,7 +13,8 @@ if (! $logado) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Gerenciador De Acesso</title>
+    <link rel="icon"  type="image/ico"  href="../login_definitivo_aluno/img/Logo.jpeg" /> <!--icon titulo-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <link href="../login_definitivo_aluno/css/bootstrap.min.css" rel="stylesheet" >
     <link href="style.css" rel="stylesheet">

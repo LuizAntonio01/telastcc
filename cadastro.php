@@ -9,11 +9,11 @@ if (isset($_POST['tipo_usuario'])) {$p_tipo_usuario = $_POST['tipo_usuario'];};
 
 
 if($p_tipo_usuario == "Discente"){
-    $sql ="INSERT INTO usuario (`Tipo_usuario`, `Nome_usuario`, `RMI`, `Matricula`, `Senha`) 
-    VALUES ('$p_tipo_usuario', '$p_NomeUser', NULL, '$p_Matricula', '$p_Senha');";
+    $sql ="INSERT INTO usuario (`Tipo_usuario`, `Nome_usuario`, `RMI`, `Matricula`, `Senha`, `status`) 
+    VALUES ('$p_tipo_usuario', '$p_NomeUser', NULL, '$p_Matricula', '$p_Senha', '1');";
 }else{
-    $sql ="INSERT INTO usuario (`Tipo_usuario`, `Nome_usuario`, `RMI`, `Matricula`, `Senha`) 
-    VALUES ('$p_tipo_usuario', '$p_NomeUser', '$p_Matricula', NULL, '$p_Senha');";
+    $sql ="INSERT INTO usuario (`Tipo_usuario`, `Nome_usuario`, `RMI`, `Matricula`, `Senha`, `status`) 
+    VALUES ('$p_tipo_usuario', '$p_NomeUser', '$p_Matricula', NULL, '$p_Senha', '1');";
 }
 
 include("conexao.php");

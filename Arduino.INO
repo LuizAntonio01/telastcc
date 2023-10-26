@@ -4,23 +4,21 @@
 #include "soc/soc.h"
 #include "soc/rtc_cntl_reg.h"
 #include "quirc.h"
-#include <WiFi.h> // Use this for WiFi instead of Ethernet.h
-#include <MySQL_Connection.h>
-#include <MySQL_Cursor.h>
+#include <WiFi.h>
+#include <HTTPClient.h> 
 /* ======================================== */
 
 byte mac_addr[] = {0xDE, 0xAD, 0xBE, 0xEF, 0xFE, 0xED};
 
-IPAddress server_addr(194, 195, 213, 74); // IP of the MySQL *server* here
-char user[] = "luiz";                     // MySQL user login username
-char password[] = "tcc";                  // MySQL user login password
 
 // WiFi card example
 char ssid[] = "ZicaVirus"; // your SSID
 char pass[] = "Yasmim73";  // your SSID Password
 
+String arquivoPHP = "http://192.168.0.106:8080/telastcc/Processa_Leitura.php";
+
+
 WiFiClient client; // Use this for WiFi instead of EthernetClient
-MySQL_Connection conn((Client *)&client);
 
 // creating a task handle
 TaskHandle_t QRCodeReader_Task;
@@ -134,8 +132,12 @@ TaskHandle_t QRCodeReader_Task;
 #endif
 /* ======================================== */
 
-void setup()
-{
+#define LED_OnBoard 4
+
+void setup(){
+
+   pinMode(LED_OnBoard, OUTPUT);
+
   Serial.begin(115200);
   while (!Serial)
     ; // wait for serial port to connect. Needed for Leonardo only
@@ -150,17 +152,7 @@ void setup()
   Serial.println("Conexão Wi-Fi estabelecida.");
   // End WiFi section
 
-  Serial.println("Connecting...");
-  if (conn.connect(server_addr, 3333, user, password))
-  {
-    delay(1000);
-
-    Serial.println("Connected");
-  }
-  else
-    Serial.println("Connection failed.");
-  conn.close();
-
+ 
   // Disable brownout detector.
   WRITE_PERI_REG(RTC_CNTL_BROWN_OUT_REG, 0);
 
@@ -325,47 +317,76 @@ void dumpData(const struct quirc_data *data)
   // Serial.printf("Length: %d\n", data->payload_len);
   Serial.printf("Payload: %s\n", data->payload);
 
-  QRCodeResult = (const char *)data->payload;
-  char query[] = "SELECT Cod_usuario, Matricula FROM esp32db.usuario WHERE Matricula = %s", QRCodeResult;
-  MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
-  cur_mem->execute(query);
+   if (WiFi.status() == WL_CONNECTED) {
+    HTTPClient http;
+    
+    // URL do site para onde você deseja enviar os dados
+    String url = arquivoPHP + "?v=" + String((const char*)data->payload);
 
-  column_names *cols = cur_mem->get_columns();
-  for (int f = 0; f < cols->num_fields; f++)
-  {
-    Serial.print(cols->fields[f]->name);
-    if (f < cols->num_fields - 1)
-    {
+    http.begin(url);
 
-      // acender LED
+    int httpResponseCode = http.GET();
 
-      char Query2[] = "SELECT * FROM esp32db.trafego where FKCODUSUARIO=11 order by COD_TRAFEGO DESC LIMIT 1;";
-      char query2[128];
-      cur_mem->execute(query2);
-      // fazer pesquisa
-      /*
-      if (ResultQuery1 == "Saida")
-      {
-        char INSERT_SQL[] = "INSERT INTO esp32db.trafego (TIPO_TRAFEGO, FKCODUSUARIO, FKCODCATRACA ) VALUES (%s,%i, %i)";
-        char query3[128];
-        MySQL_Cursor *cur_mem = new MySQL_Cursor(&conn);
-        // Save
-        sprintf(query3, INSERT_SQL, T_Trafego, Cod_User, 1);
-        // Execute the query
-        cur_mem->execute(query3);
-        // Note: since there are no results, we do not need to read any data
-        // Deleting the cursor also frees up memory used
-        delete cur_mem;
-        // Serial.println("Data recorded."); piscar led
+    if (httpResponseCode > 0) {
+      // Serial.print("HTTP Response Code: ");
+      // Serial.println(httpResponseCode);
+      String respontaPHP = http.getString();
+      Serial.println(respontaPHP);
+      if (respontaPHP == "0"){
+
+        digitalWrite(LED_OnBoard, HIGH);
+        delay(200);
+        digitalWrite(LED_OnBoard, LOW);
+        delay(100);
+         digitalWrite(LED_OnBoard, HIGH);
+        delay(200);
+        digitalWrite(LED_OnBoard, LOW);
+        delay(100);
+         digitalWrite(LED_OnBoard, HIGH);
+        delay(200);
+        digitalWrite(LED_OnBoard, LOW);
+        delay(100);
+         digitalWrite(LED_OnBoard, HIGH);
+        delay(200);
+        digitalWrite(LED_OnBoard, LOW);
+          
+
+      } else {
+
+        digitalWrite(LED_OnBoard, HIGH);
+        delay(1000);
+        digitalWrite(LED_OnBoard, LOW);
+        delay(1000);
+        digitalWrite(LED_OnBoard, HIGH);
+        delay(1000);
+        digitalWrite(LED_OnBoard, LOW); 
+
       }
-      * /
-          Serial.print('Liberado');
+  
+
+    } else {
+
+      digitalWrite(LED_OnBoard, HIGH);
+        delay(200);
+        digitalWrite(LED_OnBoard, LOW);
+        delay(100);
+         digitalWrite(LED_OnBoard, HIGH);
+        delay(200);
+        digitalWrite(LED_OnBoard, LOW);
+        delay(100);
+         digitalWrite(LED_OnBoard, HIGH);
+        delay(200);
+        digitalWrite(LED_OnBoard, LOW);
+        delay(100);
+         digitalWrite(LED_OnBoard, HIGH);
+        delay(200);
+        digitalWrite(LED_OnBoard, LOW);
+        
     }
-    else
-    {
-      // acende led vermelho
-      Serial.print('Não liberdo');
-    }
+
+    http.end();
   }
-  delete cur_mem;
+
+  delay(1);  // Espera por um minuto antes de fazer a próxima solicitação
+  
 }
